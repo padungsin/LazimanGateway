@@ -29,6 +29,9 @@ public class GatewayService {
 	@Autowired
 	private IotGatewayRepository iotGatewayRepository;
 	
+	@Autowired
+	private DeviceCallback callback;
+	
 
 	
 	public boolean initial() throws Exception{
@@ -71,12 +74,12 @@ public class GatewayService {
 		for (IotDevice iotDevice : iotDevices) {
 			if(!found){
 				devices.add(iotDevice.getCustomDevice());
-				//found = true;
+				//found = true; 
 			}
 		}
 		//List<CustomDevice> devices = DeviceRegistryImpl.listDevicesForGateway(CloudConfig.projectId, CloudConfig.cloudRegion, CloudConfig.registryId, gateway.getGatewayId());
 		
-		MqttGatewatImpl.getInstance(gateway, new DeviceCallback()).listenForConfigMessages(devices);
+		MqttGatewatImpl.getInstance(gateway, callback).listenForConfigMessages(devices);
 		
 		
 		//MqttGatewatImpl.getInstance(gateway, new DeviceCallback()).listenForEvent();

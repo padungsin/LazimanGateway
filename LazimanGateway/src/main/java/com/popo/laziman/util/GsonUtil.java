@@ -15,4 +15,17 @@ public class GsonUtil {
 		
 		return gson.toJson(src);
 	}
+	
+	
+	public static Object toObject(String json, Class cls){
+		Gson gson = new GsonBuilder()
+			     .enableComplexMapKeySerialization()
+			     .setDateFormat("yyyy-MM-dd HH:mm:ss")
+			     .setPrettyPrinting()
+			     .setVersion(1.0)
+			     .create();
+		
+		
+		return gson.fromJson(json, cls);
+	}
 }

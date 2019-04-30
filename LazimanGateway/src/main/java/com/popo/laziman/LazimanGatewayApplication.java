@@ -6,12 +6,12 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-public class LazimanApplication {
+public class LazimanGatewayApplication {
 	
 	public static final String APP_NAME = "LazimanGateway";
 
 	public static void main(String[] args) {
-		SpringApplication.run(LazimanApplication.class, args);
+		SpringApplication.run(LazimanGatewayApplication.class, args);
 	}
 
 }

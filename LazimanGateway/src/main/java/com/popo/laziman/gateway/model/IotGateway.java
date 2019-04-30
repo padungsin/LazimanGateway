@@ -26,27 +26,23 @@ public class IotGateway implements Serializable {
 	}
 
 	public IotGateway(CustomGateway customGateway) {
-		this.gatewayId = customGateway.getGatewayId();
-		this.gatewayName = customGateway.getGatewayName();
+		this.gatewayId = customGateway.getDeviceId();
+		this.gatewayName = customGateway.getDeviceId();
 
 	}
 
 	public void populate(CustomGateway customGateway) {
 
-		this.gatewayId = customGateway.getGatewayId();
-		this.gatewayName = customGateway.getGatewayName();
+		this.gatewayId = customGateway.getDeviceId();
+		this.gatewayName = customGateway.getDeviceName();
 	}
 
 	public CustomGateway getCustomGateway() {
 
 		CustomGateway customGateway = new CustomGateway();
 
-		customGateway.setGatewayId(this.gatewayId);
-		customGateway.setGatewayName(this.gatewayName);
-		customGateway.setGatewayDevice(new CustomDevice());
-
-		customGateway.getGatewayDevice().setDeviceId(this.gatewayId);
-		customGateway.getGatewayDevice().setDeviceName(this.gatewayName);
+		customGateway.setDeviceId(this.gatewayId);
+		customGateway.setDeviceName(this.gatewayName);
 		
 		return customGateway;
 

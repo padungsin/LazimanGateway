@@ -9,9 +9,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.popo</groupId>
-	<artifactId>lazimanGateway</artifactId>
+	<artifactId>LazimanGateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>lazimanGateway</name>
+	<name>LazimanGateway</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -23,11 +23,13 @@
 			<groupId>com.popo</groupId>
 			<artifactId>GatewayIotLib</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.popo</groupId>
 			<artifactId>IotModel</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
